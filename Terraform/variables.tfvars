@@ -1,0 +1,11 @@
+resource_group_name = "aks_terraform_rg"
+location            = "Israel Central"
+cluster_name        = "terraform-aks"
+kubernetes_version  = "1.32.3"
+node_count   =        2
+node_resource_group = "aks_terraform_resources_rg"
+acr_name            = "nitzanacr"
+client_id           = "YOUR_CLIENT_ID"
+client_secret       = "YOUR_CLIENTֹֹ_SECRET_ID"
+tenant_id           = "YOUR_TENANT_ID"
+subscription_id     = "YOUR_SUBSCRIPTION_ID"
