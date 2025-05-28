@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-b-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-b
+  template:
+    metadata:
+      labels:
+        app: service-b
+    spec:
+  containers:
+        - name: service-b
+          image: nitzanacr.azurecr.io/service-b:latest
+          command:
+            - "sleep"
+            - "3600"
+          ports:
+            - containerPort: 80

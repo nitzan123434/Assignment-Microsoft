@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: service-a-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: service-a-deployment
+  policyTypes:
+         - Ingress
+  ingress:
+    - from:
+        - podSelector:
+              matchExpressions:
+              - key: app
+                operator: NotIn
+                values:
+                  - service-b-deployment
+    - Ingress
